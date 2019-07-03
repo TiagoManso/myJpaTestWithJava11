@@ -1,0 +1,25 @@
+thorntail:
+  http:
+    port: 8080
+  datasources:
+    jdbc-drivers:
+      com.mysql:
+        driver-class-name: com.mysql.jdbc.Driver
+        xa-datasource-class-name: com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
+        driver-module-name: com.mysql
+    data-sources:
+      myDS:
+        driver-name: com.mysql
+        connection-url: jdbc:mysql://localhost:3307/...
+        user-name: user
+        password: pass
+        check-valid-connection-sql: select 1
+        background-validation: true
+        background-validation-millis: 600000
+        use-ccm: false
+  logging:
+    root-logger:
+      level: INFO
+    loggers:
+      com.mytest:
+        level: DEBUG
