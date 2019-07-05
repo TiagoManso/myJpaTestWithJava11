@@ -25,9 +25,6 @@ public class Table3 extends AbstractIdEntity {
     @Column(name = "some_bytes", nullable = false)
     private byte[] someBytes;
 
-    /**
-     * List of encrypted devices
-     */
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "table_3_id")
     private List<Table4> table4List;
